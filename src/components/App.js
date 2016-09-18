@@ -5,17 +5,6 @@ import WeatherPlot from './WeatherPlot';
 import LocationInfo from './LocationInfo';
 import AppBody from './AppBody';
 
-const mockLocation = {
-  city: 'Bandung',
-  region: 'West Java',
-  country: 'Indonesia',
-};
-
-const mockData = {
-  temperature: 74,
-  windspeed: 6,
-};
-
 class App extends Component {
   render() {
     return (
@@ -26,9 +15,7 @@ class App extends Component {
 
         <AppBody>
           <WeatherPlot />
-          <LocationInfo location={mockLocation}
-            temperature={mockData.temperature}
-            windspeed={mockData.windspeed} />
+          <LocationInfo />
         </AppBody>
       </div>
     );

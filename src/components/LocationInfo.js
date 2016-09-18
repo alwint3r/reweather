@@ -1,7 +1,8 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
+import { connect } from 'react-redux';
 
-const LocationInfo = props => (
+export const LocationInfo = props => (
   <Paper className="grid-paper">
     <div className="location-info">
       <h1> {props.location.city} </h1>
@@ -15,4 +16,13 @@ const LocationInfo = props => (
   </Paper>
 );
 
-export default LocationInfo;
+const mapStateToProps = state => {
+  const temperature = state.temperature[state.temperature.length - 1];
+  return {
+    location: state.location,
+    windspeed: state.wind,
+    temperature: temperature ? temperature.value : 72,
+  };
+};
+
+export default connect(mapStateToProps)(LocationInfo);

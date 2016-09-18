@@ -10,6 +10,7 @@
     "mqtt": "^1.14.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
     "react-tap-event-plugin": "^1.0.0",
     "recharts": "^0.14.1",
     "redux": "^3.6.0"
