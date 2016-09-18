@@ -1,0 +1,21 @@
+.grid-paper {
+  min-height: 300px;
+  padding: 10px 4px;
+}
+
+.App {
+  margin: 0;
+  padding: 0;
+}
+
+.App-body {
+  margin: 10px;
+}
+
+.location-info {
+  margin: 5px 10px;
+}
+
+.location-detail {
+  margin-top: 10px;
+}
