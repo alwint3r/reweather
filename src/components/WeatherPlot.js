@@ -18,30 +18,10 @@ const chartMargin = {
   bottom: 5,
 };
 
-const mockData = [
-  {
-    time: new Date(),
-    value: 72,
-  },
-  {
-    time: new Date(),
-    value: 72,
-  },
-
-  {
-    time: new Date(),
-    value: 74,
-  },
-  {
-    time: new Date(),
-    value: 74,
-  },
-];
-
 export const WeatherPlot = props => (
   <Paper className="grid-paper">
     <ResponsiveContainer minHeight={300}>
-      <LineChart margin={chartMargin} data={props.data || mockData}>
+      <LineChart margin={chartMargin} data={props.data}>
         <XAxis dataKey="time" />
         <YAxis />
         <Tooltip />

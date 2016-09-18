@@ -7,6 +7,11 @@ const defaultState = {
 
   wind: 6,
   temperature: [],
+
+  snackbar: {
+    state: false,
+    message: '',
+  },
 };
 
 export default function (state = defaultState, action) {
@@ -17,7 +22,7 @@ export default function (state = defaultState, action) {
       let temperature;
 
       if (state.temperature.length > 29)
-        temperature = state.temperature.slice()
+        temperature = state.temperature.slice(1)
       else
         temperature = state.temperature.concat([{
           time: new Date(),
@@ -29,6 +34,42 @@ export default function (state = defaultState, action) {
         temperature,
         location: payload.location,
         wind: Number(payload.wind),
+      };
+
+    case 'MQTT_CONNECT':
+      return {
+        ...state,
+        snackbar: {
+          state: true,
+          message: 'Connected to MQTT broker',
+        },
+      };
+
+    case 'MQTT_DISCONNECT':
+      return {
+        ...state,
+        snackbar: {
+          state: true,
+          message: 'Disconnected from MQTT broker',
+        },
+      };
+
+    case 'MQTT_ERROR':
+      return {
+        ...state,
+        snackbar: {
+          state: true,
+          message: action.err.message,
+        },
+      };
+
+    case 'SNACKBAR_CLOSE':
+      return {
+        ...state,
+        snackbar: {
+          state: false,
+          message: '',
+        },
       };
 
     default:
