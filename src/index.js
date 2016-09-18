@@ -28,15 +28,11 @@ mqttRedux.connect(actionTopicMapping, store);
 
 injectTapEventPlugin();
 
-const ThemedApp = (props) => (
-  <MuiThemeProvider>
-    <App {...props} />
-  </MuiThemeProvider>
-);
-
 ReactDOM.render(
   <Provider store={store}>
-    <ThemedApp />
+    <MuiThemeProvider>
+      <App />
+    </MuiThemeProvider>
   </Provider>,
   document.getElementById('root')
 );
