@@ -13,9 +13,11 @@ import { createClient } from './lib/mqttredux';
 import reducer from './reducer';
 
 const mqttConfig = {
-  url: 'ws://broker.hivemq.com:8000',
+  url: 'ws://localhost:8888',
   opt: {
     clientId: 'reweather-redux-' + Date.now(),
+    protocolId: 'MQIsdp',
+    protocolVersion: 3,
   },
 };
 const mqttRedux = createClient(mqttConfig);

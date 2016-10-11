@@ -18,7 +18,6 @@ export default function (state = defaultState, action) {
   switch(action.type) {
     case 'NEW_WEATHER_DATA':
       const payload = JSON.parse(action.payload);
-
       let temperature;
 
       if (state.temperature.length > 29)
